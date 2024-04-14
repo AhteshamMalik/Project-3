@@ -83,7 +83,7 @@ if (input.Pin === pinNumber) {
         });
         if (
           withdrawInput.withdrawAmount > balance ||
-          withdrawInput.withdrawAmount < 0
+          withdrawInput.withdrawAmount < 500
         ) {
           console.log("Isufficient Balacnce");
         } else {
@@ -93,13 +93,14 @@ if (input.Pin === pinNumber) {
       } else if (atmOptions.options === "Check Balance") {
         console.log(`Your Current Balance is: ${balance}`);
       } else {
-        let exit = await inquirer.prompt({
-          message: `Enter "n" to exit or Enter any key to Continue...`,
-          type: "confirm",
-          name: "exitConfirmation",
-          default: "false",
-        });
-        exitCondition = exit.exitConfirmation;
+         break;   
+        // let exit = await inquirer.prompt({
+        //   message: `Enter "n" to exit or Enter any key to Continue...`,
+        //   type: "confirm",
+        //   name: "exitConfirmation",
+        //   default: "false",
+        // });
+        // exitCondition = exit.exitConfirmation;
       }
     }
   }
@@ -107,4 +108,3 @@ if (input.Pin === pinNumber) {
   console.log("Enter the Correct Pin Number");
 }
 
-// While loop & Break method are in Operation.
